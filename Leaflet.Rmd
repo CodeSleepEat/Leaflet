@@ -1,0 +1,15 @@
+---
+title: "Leaflet"
+output: html_document
+---
+
+The document was created on 27th January 2019.
+```{r}
+library(leaflet)
+data <- data.frame(lat= runif(100, min=40.73, max=40.83),
+                   lng = runif(100, min= -73.99, max=-73.89))
+
+data %>% leaflet() %>% addTiles() %>% addMarkers(clusterOptions = markerClusterOptions()) %>% addCircles(lat =40.78, lng =-73.96, radius=200) 
+ 
+```
+
